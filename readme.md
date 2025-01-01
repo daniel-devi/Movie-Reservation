@@ -1,7 +1,7 @@
 # Movie Reservation System
 
 The **Movie Reservation System** is a backend service that allows users to reserve movie tickets. It includes features such as user authentication, movie and showtime management, seat reservation functionality, and reporting on reservations. The goal of this project is to implement complex business logic, data modeling, and relationships in a real-world application.
-Built with ReactDj - ReactTS, Django and Django rest framework
+
 ---
 
 ## Requirements
@@ -35,14 +35,51 @@ Built with ReactDj - ReactTS, Django and Django rest framework
 
 ---
 
+## Folder Structure
+
+The project is structured as follows:
+
+```
+MOVIE RESERVATION
+├── docs                 # Documentation for the project
+├── Movy
+│   ├── Backend          # Backend source code
+│   │   ├── apps         # Django apps for various functionalities
+│   │   ├── media        # Media files (e.g., movie posters)
+│   │   ├── Movy         # Core Django project settings
+│   │   ├── db.sqlite3   # SQLite database (for development)
+│   │   ├── manage.py    # Django management script
+│   │   └── requirements.txt  # Backend dependencies
+│   └── Frontend         # Frontend source code
+│       ├── src          # React source code
+│       │   ├── components  # Reusable components
+│       │   ├── css         # Styling files
+│       │   ├── hooks       # Custom React hooks
+│       │   ├── pages       # Page components
+│       │   ├── utils       # Utility functions
+│       │   ├── App.tsx     # Main App component
+│       │   └── main.tsx    # Entry point for the React app
+│       ├── index.html   # Main HTML file
+│       ├── package.json # Frontend dependencies
+│       └── tailwind.config.js # Tailwind CSS configuration
+└── README.md            # Project documentation
+```
+
+---
+
 ## Get Started
 
 Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/daniel-devi/Movie-Reservation.git
 ```
 
 ---
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
+
+## Reference
+This project is inspired by [roadmap.sh's Movie Reservation System](https://roadmap.sh/projects/movie-reservation-system).
