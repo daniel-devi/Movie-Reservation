@@ -1,0 +1,10 @@
+// export { default as <ComponentName> } from "<ComponentPath>";
+export {default as Home} from './HomePage'
+export {default as LoginPage} from './LoginPage'
+export {default as RegisterPage} from './RegisterPage'
+export {default as Logout} from './Logout'
+export {default as NotFoundPage} from './NotFoundPage'
+export {default as BrowseMovies} from './BrowseMovie'
+export {default as Showtimes} from './Showtime'
+export {default as ReserveSeat} from './SeatReservation'
+export {default as SuccessPage} from './Success'
