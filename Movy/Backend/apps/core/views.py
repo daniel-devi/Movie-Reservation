@@ -152,7 +152,7 @@ class ReservationListCreateView(ListCreateAPIView):
 
 
 class ReservationFilterView(ListAPIView):
-    serializer_class = ReservationSerializer
+    serializer_class = ReservationDisplaySerializer
     authentication_classes = []
     permission_classes = []
 

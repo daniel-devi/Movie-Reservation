@@ -52,9 +52,16 @@ class MultiSelectFieldSerializer(serializers.Field):
         return data
     
 # Reservation Serializer
-class ReservationSerializer(serializers.ModelSerializer):
+class ReservationDisplaySerializer(serializers.ModelSerializer):
     seat_numbers = MultiSelectFieldSerializer(required=True)
     showtime = serializers.SlugRelatedField(many=False, read_only=True, slug_field='start_time')
+    class Meta:
+        model = Reservation
+        fields = ['id', 'showtime', 'seat_numbers', 'status', "user", 'created_at', "successful_payment"]
+
+# Reservation Serializer
+class ReservationSerializer(serializers.ModelSerializer):
+    seat_numbers = MultiSelectFieldSerializer(required=True)
     class Meta:
         model = Reservation
         fields = ['id', 'showtime', 'seat_numbers', 'status', "user", 'created_at', "successful_payment"]

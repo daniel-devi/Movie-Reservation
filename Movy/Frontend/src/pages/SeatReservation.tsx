@@ -22,7 +22,7 @@ const SeatReservationPage: React.FC = () => {
     const [totalPrice, setTotalPrice] = useState<number>(0);
     const [movieName, setMovieName] = useState<string>('');
     const [showtime, setShowtime] = useState<string>('');
-    const [successID, setSuccessID] = useState<string>('');
+    const [successID, setSuccessID] = useState<string>(null);
     const stripe = useStripe();
     const elements = useElements();
 
@@ -83,9 +83,6 @@ const SeatReservationPage: React.FC = () => {
                 throw new Error(paymentError.message);
             }
 
-            console.log('Payment succeeded:', paymentIntent);
-            console.log(`Showtime ID: ${showtimeId}`);
-
             // Create reservation
             const reservationResponse = await apiClient.post('/core/v1/reservation', {
                 status: 'confirmed',
@@ -101,7 +98,7 @@ const SeatReservationPage: React.FC = () => {
             setSuccessID(reservationResponse.data.id);
 
             // Update UI with reservation
-            console.log('Reservation created:', reservationResponse.data.id);
+            console.log('Reservation created:', successID);
             navigate(`/success/${successID}`);
         } catch (error) {
             console.error('Error processing payment or reservation:', error);
