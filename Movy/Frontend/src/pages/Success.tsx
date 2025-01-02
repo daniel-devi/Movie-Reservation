@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, Typography, CircularProgress, Button, Paper } from '@mui/material';
-import { apiClient, formatDate } from '@/utils'; // Ensure apiClient is correctly configured
+import { apiClient, formatDate } from '@/utils'; 
 
 const SuccessPage = () => {
   const { id } = useParams(); // Get the 'id' from the URL
-  const [reservation, setReservation] = useState(null);
+  const [reservation, setReservation] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 

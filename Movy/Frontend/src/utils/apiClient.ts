@@ -46,7 +46,7 @@ apiClient.interceptors.response.use(
         localStorage.removeItem("TOKEN");
         localStorage.removeItem("REFRESH_TOKEN");
         // Redirect to login or handle accordingly
-        // window.location.href = "/login"; // Uncomment for redirect
+        window.location.href = "/login";
       }
     }
 

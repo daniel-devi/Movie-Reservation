@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const RegisterPage: React.FC = () => {
   const [showChip, setShowChip] = useState(false);
+  const navigate = useNavigate();
+  
   const handleRegistrationSuccess = () => {
     setShowChip(true);
-    const navigate = useNavigate();
     setTimeout(() => {
       navigate("/login");
     }, 2000);

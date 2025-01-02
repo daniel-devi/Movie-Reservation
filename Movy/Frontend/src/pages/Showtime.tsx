@@ -10,7 +10,7 @@ import {
     Alert,
 } from '@mui/material';
 import Navbar from '../components/NavBar';
-import { formatDate, apiClient } from '@/utils';
+import { apiClient } from '@/utils';
 
 interface Showtime {
     id: number;
@@ -46,7 +46,7 @@ const Showtimes: React.FC = () => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                setError(null); // Reset error on new fetch
+                setError(null); 
                 const data = await fetchShowtimes(movieId!);
                 setShowtimes(data);
             } catch (error) {
