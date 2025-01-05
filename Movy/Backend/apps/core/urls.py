@@ -28,5 +28,8 @@ urlpatterns = [
     #? Reservation Get  URL - GET - 127.0.0.1:8000/api/core/v1/reservations/<int:reservation_id>
     path('v1/reservations/<int:reservation_id>', ReservationFilterView.as_view(), name='reservation_detail'),
 
+    #? Reservation  Get  URL - GET - 127.0.0.1:8000/api/core/v1/reservations/user/<int:user_id>
+    path('v1/reservations/user/<int:user_id>', ReservationUserFilterView.as_view(), name='reservation_user_detail'),
+
     # TODO: Add your URLS here.
 ]

@@ -8,6 +8,7 @@ from rest_framework.generics import ListAPIView, ListCreateAPIView
 from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 # Current
 from .models import *
 from .serialiser import *
@@ -150,7 +151,7 @@ class ReservationListCreateView(ListCreateAPIView):
         queryset = Reservation.objects.all()
         return queryset
 
-
+# Reservation Filter View
 class ReservationFilterView(ListAPIView):
     serializer_class = ReservationDisplaySerializer
     authentication_classes = []
@@ -158,4 +159,13 @@ class ReservationFilterView(ListAPIView):
 
     def get_queryset(self):
         queryset = Reservation.objects.filter(id=self.kwargs['reservation_id'])
+        return queryset
+
+# Reservation User Filter   
+class ReservationUserFilterView(ListAPIView):
+    serializer_class = ReservationDisplaySerializer
+    permission_classes = []
+
+    def get_queryset(self):
+        queryset = Reservation.objects.filter(user=self.kwargs['user_id'])
         return queryset

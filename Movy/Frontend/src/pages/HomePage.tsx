@@ -29,6 +29,9 @@ const Home: React.FC = () => {
                     <Link to='/movies' className='px-6 py-2 bg-blue-500 rounded hover:bg-blue-650 transition'>
                         Movies
                     </Link>
+                    
+                    <Link to="/tickets" className='px-6 py-2 bg-blue-500 rounded hover:bg-blue-650 transition'>Ticket</Link>
+                
                 </div>
                 {isAuthenticated && (
                     <div>

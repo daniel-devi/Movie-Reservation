@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {Home, LoginPage, RegisterPage, Logout,NotFoundPage, BrowseMovies, Showtimes, ReserveSeat, SuccessPage} from '@/pages';
+import {
+Home, LoginPage, RegisterPage, Logout,NotFoundPage, 
+BrowseMovies, Showtimes, ReserveSeat, SuccessPage, Tickets
+} from '@/pages';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +19,8 @@ const App: React.FC = () => {
         <Route path="/movies/:movieId/showtimes" element={<Showtimes />} />
         <Route path='/reserve/:showtimeId' element={<ReserveSeat />} />
         <Route path="/success/:id" element={<SuccessPage />} />
+        <Route path="/tickets" element={<Tickets />} />
+
       </Routes>
     </Router>
   );
